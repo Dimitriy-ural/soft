@@ -2,80 +2,50 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Набор инструментов сетевого инженера - быстрый доступ к профессиональным утилитам">
-    <title>NetEngineer Tools | Сетевой инженер</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инструментарий сетевого инженера | Утилиты и инструменты</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome 6 (бесплатные иконки) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts - Inter + JetBrains Mono -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <!-- Шапка с градиентом и сетевой тематикой -->
-        <header class="header">
-            <div class="badge-group">
-                <span class="badge"><i class="fas fa-network-wired"></i> NETWORK ENGINEER</span>
-                <span class="badge secondary"><i class="fas fa-terminal"></i> TOOLKIT v1.0</span>
+        <header>
+            <div class="header-content">
+                <i class="fas fa-network-wired header-icon"></i>
+                <h1>Инструментарий сетевого инженера</h1>
+                <p>Быстрый доступ к профессиональным утилитам для диагностики, администрирования и мониторинга сети</p>
+                <div class="badge">
+                    <i class="fas fa-shield-alt"></i> Проверенные источники
+                </div>
             </div>
-            <h1>
-                <span class="glitch-text">Инструментарий</span>
-                <br>сетевого инженера
-            </h1>
-            <p class="subtitle">Быстрый доступ к профессиональным утилитам для диагностики, администрирования и мониторинга сети</p>
         </header>
 
-        <!-- Панель управления с поиском и фильтрацией -->
-        <div class="control-panel">
+        <div class="search-section">
             <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Поиск по названию, описанию или категории...">
-                <button id="clearSearch" class="clear-btn" aria-label="Очистить">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Поиск программ по названию или категории...">
+                <button id="clearSearch" class="clear-btn" style="display: none;">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <div class="filter-tabs" id="filterTabs">
-                <button class="filter-btn active" data-category="all">
-                    <i class="fas fa-th-large"></i> Все
-                </button>
-                <button class="filter-btn" data-category="Терминалы">
-                    <i class="fas fa-terminal"></i> Терминалы
-                </button>
-                <button class="filter-btn" data-category="Сканеры">
-                    <i class="fas fa-radar"></i> Сканеры
-                </button>
-                <button class="filter-btn" data-category="Файловые">
-                    <i class="fas fa-folder-tree"></i> Файловые
-                </button>
-                <button class="filter-btn" data-category="Диагностика">
-                    <i class="fas fa-chart-line"></i> Диагностика
-                </button>
-            </div>
-            <div class="stats-info">
-                <span id="visibleCount">0</span> / <span id="totalCount">0</span>
-                <i class="fas fa-cube"></i>
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">Все</button>
+                <button class="filter-btn" data-category="rom">SSD/HDD/USB</button>
+                <button class="filter-btn" data-category="netops">NetOps</button>
+                <button class="filter-btn" data-category="terminal">Терминалы</button>
+                <button class="filter-btn" data-category="analyzer">Анализаторы</button>
+                <button class="filter-btn" data-category="utility">Утилиты</button>
             </div>
         </div>
 
-        <!-- Сетка карточек инструментов -->
-        <div class="tools-grid" id="toolsGrid"></div>
+        <div class="tools-grid" id="toolsGrid">
+            <!-- Карточки инструментов будут добавлены через JS -->
+        </div>
 
-        <!-- Footer с подсказками -->
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="tip">
-                    <i class="fas fa-mouse-pointer"></i>
-                    <span>Клик по карточке или кнопке — моментальный переход</span>
-                </div>
-                <div class="tip">
-                    <i class="fas fa-keyboard"></i>
-                    <span>ESC — очистить поиск</span>
-                </div>
-                <div class="version">
-                    <i class="fas fa-shield-alt"></i> Для сетевых профессионалов
-                </div>
-            </div>
+        <footer>
+            <p><i class="far fa-copyright"></i> 2026 Инструментарий сетевого инженера. Все ссылки ведут на официальные источники и проверенные зеркала.</p>
+            <p class="footer-note"><i class="fas fa-info-circle"></i> Зеркала предоставлены для случаев недоступности официальных сайтов</p>
         </footer>
     </div>
 

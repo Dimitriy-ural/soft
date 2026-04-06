@@ -1,251 +1,267 @@
-// БАЗА ДАННЫХ ИНСТРУМЕНТОВ СЕТЕВОГО ИНЖЕНЕРА
-const toolsDatabase = [
+// Данные инструментов для сетевого инженера
+const tools = [
     {
-        name: "PuTTY (64-bit)",
-        description: "Популярный SSH/Telnet клиент, также поддерживает Serial, Rlogin. Незаменим для доступа к сетевому оборудованию.",
-        url: "https://www.putty.org/",
-        icon: "fas fa-terminal",
-        category: "Терминалы"
+        name: "Wireshark",
+        category: "netops",
+        description: "Мощнейший анализатор сетевого трафика. Позволяет захватывать и интерактивно просматривать пакеты в реальном времени.",
+        officialUrl: "https://www.wireshark.org/#download",
+        mirrorUrl: "https://disk.yandex.ru/d/9GlQSOljH_lIUg",
+        icon: "fa-chart-line"
+    },
+    {
+        name: "PuTTY",
+        category: "terminal",
+        description: "Популярный SSH/Telnet клиент для удаленного доступа к сетевым устройствам. Поддерживает последовательный порт и различные протоколы.",
+        officialUrl: "https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html",
+        mirrorUrl: "https://disk.yandex.ru/d/Z3yZHu0hQ0qQFA",
+        icon: "fa-terminal"
     },
     {
         name: "WinBox",
-        description: "Официальная утилита для управления устройствами MikroTik RouterOS. Полный доступ к настройкам роутеров.",
-        url: "https://mikrotik.com/download",
-        icon: "fas fa-wifi",
-        category: "Терминалы"
+        category: "terminal",
+        description: "Утилита от компании MikroTik, предназначенная управления и настройки маршрутизаторов и сетевых устройств, на операционной системе RouterOS.",
+        officialUrl: "https://mikrotik.com/download/winbox",
+        mirrorUrl: "https://disk.yandex.ru/d/1O_q_qSZFO7_5g",
+        icon: "fa-terminal"
     },
     {
-        name: "Advanced IP Scanner",
-        description: "Быстрый сканер локальной сети. Показывает все устройства, открытые порты, расшаренные ресурсы.",
-        url: "https://www.advanced-ip-scanner.com/",
-        icon: "fas fa-radar",
-        category: "Сканеры"
+        name: "SolarWinds TFTP Server",
+        category: "utility",
+        description: "Простой и надежный TFTP сервер для передачи конфигураций и образов на сетевое оборудование.",
+        officialUrl: "https://www.solarwinds.com/free-tools/tftp-server",
+        mirrorUrl: "https://filehippo.com/download_solarwinds-tftp-server/",
+        icon: "fa-server"
+    },
+    {
+        name: "NetSetMan",
+        category: "netops",
+        description: "Программа для управления настройками сети, позволяющая легко переключаться между предварительно настроенными профилями.",
+        officialUrl: "https://www.netsetman.com/en/freeware",
+        mirrorUrl: "https://disk.yandex.ru/d/stEJz12YOQLR-w",
+        icon: "fa-search"
     },
     {
         name: "WinSCP",
-        description: "SFTP, SCP и FTP клиент с удобным двухпанельным интерфейсом. Передача файлов по защищенным протоколам.",
-        url: "https://winscp.net/",
-        icon: "fas fa-folder-open",
-        category: "Файловые"
+        category: "netops",
+        description: "Графический SFTP, FTP, WebDAV и SCP клиент с открытым исходным кодом.",
+        officialUrl: "https://winscp.net/eng/download.php",
+        mirrorUrl: "https://disk.yandex.ru/d/7xIxMUQ4NQYEaw",
+        icon: "fa-search"
     },
     {
-        name: "Wireshark",
-        description: "Анализатор трафика и сниффер пакетов. Глубокий анализ сетевых протоколов для диагностики.",
-        url: "https://www.wireshark.org/",
-        icon: "fas fa-chart-line",
-        category: "Диагностика"
+        name: "Onvif Device Manager",
+        category: "netops",
+        description: "Менеджер устройств ONVIF представляет собой SDK для интеграции IP-видеосервера Kipod Server.",
+        officialUrl: "https://www.polyvision.ru/po/dlya-windows/onvif-device-manager",
+        mirrorUrl: "https://disk.yandex.ru/d/c40vrbUYMc_bew",
+        icon: "fa-search"
     },
     {
-        name: "Angry IP Scanner",
-        description: "Легковесный сканер IP-адресов и портов. Работает на Windows, Mac, Linux.",
-        url: "https://angryip.org/",
-        icon: "fas fa-bolt",
-        category: "Сканеры"
+        name: "Victoria HDD/SSD",
+        category: "rom",
+        description: "Программа для диагностики, исследования, тестирования и мелкого ремонта жёстких дисков, SSD-накопителей.",
+        officialUrl: "https://hdd.by/victoria/",
+        mirrorUrl: "https://disk.yandex.ru/d/Z1AnLPKPencZ3A",
+        icon: "fa-chart-simple"
     },
     {
-        name: "Tera Term",
-        description: "Эмулятор терминала с поддержкой SSH, Telnet, последовательного порта. Скриптинг на TTL.",
-        url: "https://teratermproject.github.io/",
-        icon: "fas fa-code",
-        category: "Терминалы"
-    },
-    {
-        name: "MobaXterm",
-        description: "Расширенный терминал с X-сервером, SSH, RDP, VNC. Встроенный SFTP и мониторинг сети.",
-        url: "https://mobaxterm.mobatek.net/",
-        icon: "fas fa-laptop-code",
-        category: "Терминалы"
-    },
-    {
-        name: "PRTG Network Monitor",
-        description: "Мониторинг сети, отслеживание带宽, оповещения. Бесплатная версия до 100 сенсоров.",
-        url: "https://www.paessler.com/prtg",
-        icon: "fas fa-chart-bar",
-        category: "Диагностика"
-    },
-    {
-        name: "NetScanTools Pro",
-        description: "Профессиональный набор инструментов: DNS, Ping, Traceroute, WHOIS и многое другое.",
-        url: "https://www.netscantools.com/",
-        icon: "fas fa-toolbox",
-        category: "Диагностика"
+        name: "Advanced IP Scanner",
+        category: "netops",
+        description: "Бесплатный сканер сети с возможностью удаленного управления компьютерами.",
+        officialUrl: "https://www.advanced-ip-scanner.com/ru/download/",
+        mirrorUrl: "https://disk.yandex.ru/d/qSq1drZUAnt_Ww",
+        icon: "fa-eye"
     },
     {
         name: "FileZilla",
-        description: "Популярный FTP, FTPS, SFTP клиент с поддержкой IPv6 и удаленного редактирования файлов.",
-        url: "https://filezilla-project.org/",
-        icon: "fas fa-cloud-upload-alt",
-        category: "Файловые"
+        category: "netops",
+        description: "Клиент, предназначенный для передачи файлов между локальным компьютером и удаленным сервером.",
+        officialUrl: "https://filezilla-project.org/download.php?type=client",
+        mirrorUrl: "https://disk.yandex.ru/d/-lHJzjYbIemSDQ",
+        icon: "fa-eye"
     },
     {
-        name: "Solar-PuTTY",
-        description: "Альтернатива PuTTY от SolarWinds с управлением сессиями и вкладками.",
-        url: "https://www.solarwinds.com/free-tools/solar-putty",
-        icon: "fas fa-sun",
-        category: "Терминалы"
+        name: "Far Manager",
+        category: "netops",
+        description: "Консольный файловый менеджер для операционной системы Windows.",
+        officialUrl: "https://farmanager.com/download.php?l=ru",
+        mirrorUrl: "https://disk.yandex.ru/d/-ZzDu2kGuSZIvQ",
+        icon: "fa-window-maximize"
+    },
+    {
+        name: "iPerf3",
+        category: "netops",
+        description: "Инструмент для измерения пропускной способности сети и тестирования производительности.",
+        officialUrl: "https://iperf.fr/iperf-download.php",
+        mirrorUrl: "https://disk.yandex.ru/d/s-vr1_GGleGHTw",
+        icon: "fa-gauge-high"
+    },
+    {
+        name: "Nmap",
+        category: "netops",
+        description: "Мощный сканер безопасности и детектор сетевых служб. Основа сетевого аудита.",
+        officialUrl: "https://nmap.org/download.html",
+        mirrorUrl: "https://disk.yandex.ru/d/T3BxxhYRKaGwDA",
+        icon: "fa-shield-halved"
+    },
+    {
+        name: "WinSCP",
+        category: "utility",
+        description: "SFTP, FTP, SCP клиент для безопасной передачи файлов на сетевое оборудование.",
+        officialUrl: "https://winscp.net/eng/download.php",
+        mirrorUrl: "https://github.com/winscp/winscp/releases",
+        icon: "fa-cloud-arrow-up"
+    },
+    {
+        name: "SpaceSniffer",
+        category: "rom",
+        description: "Портативная программа для Windows, предназначенная для анализа использования дискового пространства.",
+        officialUrl: "https://www.uderzo.it/main_products/space_sniffer/download.html",
+        mirrorUrl: "https://disk.yandex.ru/d/T2-HdQkXO0DUhg",
+        icon: "fa-clock"
+    },
+    {
+        name: "Ventoy",
+        category: "rom",
+        description: "Утилита с открытым исходным кодом для создания загрузочных USB-накопителей.",
+        officialUrl: "https://www.ventoy.net/en/download.html",
+        mirrorUrl: "https://disk.yandex.ru/d/D-y3Dp8L0oDcaw",
+        icon: "fa-clock"
+    },
+    {
+        name: "Rufus",
+        category: "rom",
+        description: "Утилита с открытым исходным кодом для создания загрузочных USB-накопителей.",
+        officialUrl: "https://rufus.ie/",
+        mirrorUrl: "https://disk.yandex.ru/d/uYIBDDgZEBonjg",
+        icon: "fa-clock"
+    },
+    {
+        name: "R.saver",
+        category: "rom",
+        description: "Простая в использовании программа для восстановления файлов с различных версий файловых систем NTFS, FAT и ExFAT.",
+        officialUrl: "https://rlab.ru/tools/rsaver.html",
+        mirrorUrl: "https://disk.yandex.ru/d/8oIOkq7C3r3SPg",
+        icon: "fa-chart-line"
+    },
+    {
+        name: "Terraform",
+        category: "utility",
+        description: "Инфраструктура как код для автоматизации развертывания сетевых конфигураций.",
+        officialUrl: "https://www.terraform.io/downloads",
+        mirrorUrl: "https://github.com/hashicorp/terraform/releases",
+        icon: "fa-code-branch"
+    },
+    {
+        name: "Ansible",
+        category: "utility",
+        description: "Автоматизация конфигурации сетевых устройств и управления инфраструктурой.",
+        officialUrl: "https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html",
+        mirrorUrl: "https://github.com/ansible/ansible/releases",
+        icon: "fa-infinity"
     }
 ];
 
-// DOM элементы
-const gridContainer = document.getElementById('toolsGrid');
-const searchInput = document.getElementById('searchInput');
-const clearBtn = document.getElementById('clearSearch');
-const visibleSpan = document.getElementById('visibleCount');
-const totalSpan = document.getElementById('totalCount');
-const filterBtns = document.querySelectorAll('.filter-btn');
-
-let currentSearch = '';
-let currentCategory = 'all';
-
-// Обновление счетчика
-function updateStats(count) {
-    visibleSpan.textContent = count;
-    totalSpan.textContent = toolsDatabase.length;
+// Функция для получения названия категории на русском
+function getCategoryName(category) {
+    const categories = {
+        rom: "SSD/HDD/USB",
+        netops: "NetOps",
+        terminal: "Терминал",
+        analyzer: "Анализатор",
+        utility: "Утилита"
+    };
+    return categories[category] || category;
 }
 
-// Экранирование HTML
-function escapeHtml(str) {
-    if (!str) return '';
-    return str.replace(/[&<>]/g, function(m) {
-        if (m === '&') return '&amp;';
-        if (m === '<') return '&lt;';
-        if (m === '>') return '&gt;';
-        return m;
-    });
-}
+// Функция отображения карточек
+function displayTools(filterCategory = "all", searchTerm = "") {
+    const grid = document.getElementById("toolsGrid");
+    grid.innerHTML = "";
 
-// Рендер карточек
-function renderTools() {
-    const filtered = toolsDatabase.filter(tool => {
-        const matchesSearch = currentSearch === '' || 
-            tool.name.toLowerCase().includes(currentSearch) ||
-            tool.description.toLowerCase().includes(currentSearch) ||
-            tool.category.toLowerCase().includes(currentSearch);
-        
-        const matchesCategory = currentCategory === 'all' || tool.category === currentCategory;
-        
-        return matchesSearch && matchesCategory;
+    const filteredTools = tools.filter(tool => {
+        const matchesCategory = filterCategory === "all" || tool.category === filterCategory;
+        const matchesSearch = tool.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                             tool.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                             tool.category.toLowerCase().includes(searchTerm.toLowerCase());
+        return matchesCategory && matchesSearch;
     });
-    
-    updateStats(filtered.length);
-    
-    if (filtered.length === 0) {
-        gridContainer.innerHTML = `
+
+    if (filteredTools.length === 0) {
+        grid.innerHTML = `
             <div class="no-results">
-                <i class="fas fa-network-wired"></i>
-                <h3>Инструмент не найден</h3>
-                <p>Попробуйте изменить параметры поиска или фильтрации</p>
-                <button class="reset-btn" id="globalResetBtn">
-                    <i class="fas fa-sync-alt"></i> Сбросить фильтры
-                </button>
+                <i class="fas fa-folder-open"></i>
+                <h3>Ничего не найдено</h3>
+                <p>Попробуйте изменить критерии поиска</p>
             </div>
         `;
-        const resetBtn = document.getElementById('globalResetBtn');
-        if (resetBtn) {
-            resetBtn.addEventListener('click', resetAllFilters);
-        }
         return;
     }
-    
-    gridContainer.innerHTML = filtered.map(tool => {
-        // Выбор иконки в зависимости от категории для единообразия
-        let categoryIcon = '';
-        if (tool.category === 'Терминалы') categoryIcon = 'fa-terminal';
-        else if (tool.category === 'Сканеры') categoryIcon = 'fa-radar';
-        else if (tool.category === 'Файловые') categoryIcon = 'fa-folder-tree';
-        else if (tool.category === 'Диагностика') categoryIcon = 'fa-stethoscope';
-        else categoryIcon = 'fa-microchip';
-        
-        return `
-            <div class="tool-card" data-url="${escapeHtml(tool.url)}">
-                <div class="card-category">
-                    <i class="fas ${categoryIcon}"></i> ${escapeHtml(tool.category)}
-                </div>
+
+    filteredTools.forEach((tool, index) => {
+        const card = document.createElement("div");
+        card.className = `tool-card ${tool.category}`;
+        card.style.animationDelay = `${index * 0.05}s`;
+        card.innerHTML = `
+            <div class="card-header">
                 <div class="tool-icon">
-                    <i class="${tool.icon}"></i>
+                    <i class="fas ${tool.icon}"></i>
                 </div>
-                <div class="tool-name">
-                    ${escapeHtml(tool.name)}
-                </div>
-                <div class="tool-desc">
-                    ${escapeHtml(tool.description)}
-                </div>
-                <a href="${escapeHtml(tool.url)}" target="_blank" rel="noopener noreferrer" class="tool-link" data-url="${escapeHtml(tool.url)}">
-                    <span>Открыть инструмент</span> <i class="fas fa-external-link-alt"></i>
+                <h3 class="tool-name">${tool.name}</h3>
+                <span class="category-badge">${getCategoryName(tool.category)}</span>
+            </div>
+            <p class="tool-description">${tool.description}</p>
+            <div class="button-group">
+                <a href="${tool.officialUrl}" class="btn btn-official" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-globe"></i> Официальный сайт
+                    <span class="btn-sub">Скачать</span>
+                </a>
+                <a href="${tool.mirrorUrl}" class="btn btn-mirror" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-database"></i> Зеркало
+                    <span class="btn-sub">Альтернативная ссылка</span>
                 </a>
             </div>
         `;
-    }).join('');
-    
-    // Обработчик клика на карточку
-    document.querySelectorAll('.tool-card').forEach(card => {
-        card.addEventListener('click', (e) => {
-            if (e.target.closest('.tool-link')) return;
-            const url = card.getAttribute('data-url');
-            if (url) window.open(url, '_blank', 'noopener,noreferrer');
-        });
+        grid.appendChild(card);
     });
 }
 
-// Сброс всех фильтров
-function resetAllFilters() {
-    currentSearch = '';
-    currentCategory = 'all';
-    searchInput.value = '';
-    clearBtn.classList.remove('visible');
-    
-    filterBtns.forEach(btn => {
-        if (btn.dataset.category === 'all') {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-    
-    renderTools();
+// Инициализация фильтров и поиска
+let currentCategory = "all";
+let currentSearch = "";
+
+function updateDisplay() {
+    displayTools(currentCategory, currentSearch);
 }
 
-// Обработка поиска с debounce
-let searchTimeout;
-function handleSearch() {
-    clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(() => {
-        currentSearch = searchInput.value.toLowerCase().trim();
-        clearBtn.classList.toggle('visible', currentSearch !== '');
-        renderTools();
-    }, 250);
-}
-
-// Обработка категорий
-function handleCategory(category) {
-    currentCategory = category;
-    filterBtns.forEach(btn => {
-        if (btn.dataset.category === category) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-    renderTools();
-}
-
-// Инициализация событий
-searchInput.addEventListener('input', handleSearch);
-clearBtn.addEventListener('click', resetAllFilters);
-
-filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        handleCategory(btn.dataset.category);
+// Обработчики событий
+document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentCategory = btn.dataset.category;
+        updateDisplay();
     });
 });
 
-// Очистка по ESC
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        resetAllFilters();
-        searchInput.blur();
-    }
+const searchInput = document.getElementById("searchInput");
+const clearBtn = document.getElementById("clearSearch");
+
+searchInput.addEventListener("input", (e) => {
+    currentSearch = e.target.value;
+    clearBtn.style.display = currentSearch ? "flex" : "none";
+    updateDisplay();
 });
 
-// Первоначальный рендер
-renderTools();
+clearBtn.addEventListener("click", () => {
+    searchInput.value = "";
+    currentSearch = "";
+    clearBtn.style.display = "none";
+    updateDisplay();
+});
+
+// Начальная загрузка
+displayTools();
+
+// Добавляем небольшую подсказку в консоль
+console.log("Сайт навигатора сетевого инженера загружен! Всего инструментов: " + tools.length);
