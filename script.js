@@ -10,7 +10,7 @@ const tools = [
     },
     {
         name: "PuTTY",
-        category: "terminal",
+        category: "remote",
         description: "Популярный SSH/Telnet клиент для удаленного доступа к сетевым устройствам. Поддерживает последовательный порт и различные протоколы.",
         officialUrl: "https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html",
         mirrorUrl: "https://disk.yandex.ru/d/Z3yZHu0hQ0qQFA",
@@ -18,18 +18,42 @@ const tools = [
     },
     {
         name: "WinBox",
-        category: "terminal",
+        category: "remote",
         description: "Утилита от компании MikroTik, предназначенная управления и настройки маршрутизаторов и сетевых устройств, на операционной системе RouterOS.",
         officialUrl: "https://mikrotik.com/download/winbox",
         mirrorUrl: "https://disk.yandex.ru/d/1O_q_qSZFO7_5g",
         icon: "fa-terminal"
     },
     {
-        name: "SolarWinds TFTP Server",
+        name: "Ассистент",
+        category: "remote",
+        description: "Решение для удаленного доступа и поддержки (RDP)",
+        officialUrl: "https://xn--80akicokc0aablc.xn--p1ai/%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C",
+        mirrorUrl: "https://xn--80akicokc0aablc.xn--p1ai/%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C",
+        icon: "fa-terminal"
+    },
+    {
+        name: "RuDesktop",
+        category: "remote",
+        description: "Программного обеспечения для удаленного доступа и администрирования удаленных устройств (RDP)",
+        officialUrl: "https://rudesktop.ru/downloads/",
+        mirrorUrl: "https://rudesktop.ru/downloads/",
+        icon: "fa-terminal"
+    },
+    {
+        name: "Microsoft Activation Scripts (MAS)",
         category: "utility",
-        description: "Простой и надежный TFTP сервер для передачи конфигураций и образов на сетевое оборудование.",
-        officialUrl: "https://www.solarwinds.com/free-tools/tftp-server",
-        mirrorUrl: "https://filehippo.com/download_solarwinds-tftp-server/",
+        description: "Простой скрипт, который позволяет познакомиться со всеми возможностями OS Windows перед ее покупкой.",
+        officialUrl: "https://github.com/massgravel/microsoft-activation-scripts",
+        mirrorUrl: "https://github.com/massgravel/microsoft-activation-scripts",
+        icon: "fa-server"
+    },
+    {
+        name: "Очистка диска в Windows",
+        category: "utility",
+        description: "Win+R -> cleanmgr",
+        officialUrl: "https://remontka.pro/clean-disk-windows-11-tools/",
+        mirrorUrl: "https://remontka.pro/clean-disk-windows-11-tools/",
         icon: "fa-server"
     },
     {
@@ -105,14 +129,6 @@ const tools = [
         icon: "fa-shield-halved"
     },
     {
-        name: "WinSCP",
-        category: "utility",
-        description: "SFTP, FTP, SCP клиент для безопасной передачи файлов на сетевое оборудование.",
-        officialUrl: "https://winscp.net/eng/download.php",
-        mirrorUrl: "https://github.com/winscp/winscp/releases",
-        icon: "fa-cloud-arrow-up"
-    },
-    {
         name: "SpaceSniffer",
         category: "rom",
         description: "Портативная программа для Windows, предназначенная для анализа использования дискового пространства.",
@@ -143,22 +159,6 @@ const tools = [
         officialUrl: "https://rlab.ru/tools/rsaver.html",
         mirrorUrl: "https://disk.yandex.ru/d/8oIOkq7C3r3SPg",
         icon: "fa-chart-line"
-    },
-    {
-        name: "Terraform",
-        category: "utility",
-        description: "Инфраструктура как код для автоматизации развертывания сетевых конфигураций.",
-        officialUrl: "https://www.terraform.io/downloads",
-        mirrorUrl: "https://github.com/hashicorp/terraform/releases",
-        icon: "fa-code-branch"
-    },
-    {
-        name: "Ansible",
-        category: "utility",
-        description: "Автоматизация конфигурации сетевых устройств и управления инфраструктурой.",
-        officialUrl: "https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html",
-        mirrorUrl: "https://github.com/ansible/ansible/releases",
-        icon: "fa-infinity"
     }
 ];
 
@@ -167,7 +167,7 @@ function getCategoryName(category) {
     const categories = {
         rom: "SSD/HDD/USB",
         netops: "NetOps",
-        terminal: "Терминал",
+        remote: "Удаленный доступ",
         analyzer: "Анализатор",
         utility: "Утилита"
     };
