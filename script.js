@@ -153,6 +153,14 @@ const tools = [
         icon: "fa-clock"
     },
     {
+        name: "Firefox & Flash Player",
+        category: "other",
+        description: "Архив содержит Flash Player и Firefox для запуска flash, который больше не потдерживается.",
+        officialUrl: "",
+        mirrorUrl: "",
+        icon: "fa-clock"
+    },
+    {
         name: "R.saver",
         category: "rom",
         description: "Простая в использовании программа для восстановления файлов с различных версий файловых систем NTFS, FAT и ExFAT.",
@@ -168,7 +176,7 @@ function getCategoryName(category) {
         rom: "SSD/HDD/USB",
         netops: "NetOps",
         remote: "Удаленный доступ",
-        analyzer: "Анализатор",
+        other: "Остальное",
         utility: "Утилита"
     };
     return categories[category] || category;
